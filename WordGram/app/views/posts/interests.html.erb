@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts in Interests</h1>
+
+<% @int_posts.each do |post| %>
+  <%= render partial: 'index_post', locals: {post: post} %>
+<% end %>

@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+  	<h2><%= post.title %> <small>Posted On: <%= post.created_at.strftime("%Y %m %d")%></small></h2>
+  	<p><%= truncate(post.content, length: 25, separator: ' ') %></p>
+  	<% unless post.tag_list.empty? %>
+  		<p>Tagged: <%= post.tag_list.join(' ') %></p>
+  	<% end %>
+  	<div class="btn-group pull-right" role="group">
+	  	<%= link_to 'Show', post, class: "btn btn-default" %>
+	   	<%= link_to 'Edit', edit_post_path(post), class: "btn btn-default" %>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-default" %>
+	</div>
+  </div>
+  <% if post.user %>
+	<div class="panel-footer">By <%=post.user.full_name %></div>
+  <% end %>
+</div>
+

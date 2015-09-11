@@ -1,0 +1,8 @@
+<%= form_for(:comment, url: comment_on_post_path) do |f| %>
+    <div class="input-group">
+	  <%= f.text_field :content, class: 'form-control'%>
+	  <span class="input-group-btn">
+      	<%= submit_tag "Comment!", class: 'btn btn-default' %>
+      </span>
+	</div>
+<% end %>
